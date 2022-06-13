@@ -1,0 +1,105 @@
+.info-image-fixed {
+    position: fixed;
+    top: var(--image-top, 25);
+    transform: translate(-50%, 0);
+}
+
+.info-image-absolute {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.info-image-small {
+    position: absolute;
+    margin-top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+}
+
+.bg::before {
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  
+    display: block;
+    background-image: var(--pokeball-bg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+
+    width: 100%;
+    height: 100%;
+  
+    opacity: 0.1;
+    filter: blur(0.5rem);
+}
+
+.type-emblem {
+    position: absolute;
+    margin-top: 5%;
+    filter: drop-shadow(5px 5px 5px var(--type-color)) 
+        drop-shadow(-5px 5px 5px var(--type-color)) 
+        drop-shadow(0px 0px 30px var(--type-color)) 
+        saturate(150%) 
+        opacity(70%);
+}
+
+.info-bg {
+    background: 
+        linear-gradient(120deg, var(--type-bg), var(--type-bg-sec));
+    filter: saturate(120%);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    top: 0;
+}
+
+.stat-bar {
+    height: 10%;
+    width: 100%;
+    border-radius: 0.2rem;
+    position: relative;
+    background-color: #11111110;
+}
+
+.stat {
+    position: relative;
+    height: 100%;
+    width: 0%;
+    background-color: var(--bar-colour, #cfd6dd);
+    border-radius: 0.2rem;
+}
+
+.animate-stat {
+    animation: fill 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.69,.41,.11,.98);
+}
+
+.stat:before {
+    animation: progress1 4s infinite;
+    transform-origin: 0 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, 
+        rgba(255, 255, 255, 0.1), 
+        rgba(255, 255, 255, 0.4), 
+        rgba(255, 255, 255, 0.2));
+}
+
+@keyframes fill {
+    0% {
+        width: 0%;
+   }
+    100% {
+        width: var(--bar-width, 0);
+   }
+}

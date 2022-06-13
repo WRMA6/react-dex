@@ -1,0 +1,16 @@
+.fade {
+    filter: saturate(150%);
+    animation-delay: 0s, var(--transition-delay, 0s);
+    animation-name: hidden-animation, fade-animation;
+    animation-duration: var(--transition-delay), 1s;
+}
+
+@keyframes fade-animation {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@keyframes hidden-animation {
+    from {opacity: 0}
+    to {opacity: 0}
+}
