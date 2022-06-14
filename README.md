@@ -1,4 +1,4 @@
-# React-Dex
+# react-dex
 
 This is a Pokedex made using React, including Material-UI, Redux and React Router. The goal was to explore MUI while creating something fun and aesthetic. All information is fetched from the PokeAPI.
 
